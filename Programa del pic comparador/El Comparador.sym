@@ -1,0 +1,119 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006     kbd
+008     lcd
+008     PSP_DATA
+008     lcdlat
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     kbd_getc.kbd_call_count
+021.0   kbd_getc.kbd_down
+022     kbd_getc.last_key
+023     kbd_getc.col
+024-025 @sprintf_string
+026     @TRIS_C
+027     MAIN.a
+028     MAIN.b
+029     MAIN.i
+02A     lcd_init.i
+02A     kbd_getc.kchar
+02A     @PSTRINGC7_663.@SCRATCH1
+02B     kbd_getc.row
+02B-02E lcd_init.LCD_INIT_STRING
+02B     @PSTRINGC7_663.@SCRATCH2
+02C     @MUL88.P1
+02C     kbd_getc.@SCRATCH1
+02C     @PSTRINGC7_663.@SCRATCH3
+02D     lcd_putc.c
+02D     @MUL88.P1
+02D     @PSTRINGC7_663.@SCRATCH4
+02E     lcd_gotoxy.x
+02F     @delay_ms1.P1
+02F     lcd_gotoxy.y
+02F     lcd_init.@SCRATCH1
+030     lcd_gotoxy.address
+031     lcd_gotoxy.@SCRATCH1
+032     lcd_send_byte.address
+033     lcd_send_byte.n
+034     lcd_read_byte.low
+034     lcd_send_byte.@SCRATCH1
+035     lcd_send_nibble.n
+035     lcd_read_byte.high
+036     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  KEYS.call
+000008  KEYS.data
+000014  @const697.call
+000019  @const704.call
+00001E  @const708.call
+000024  @const709.call
+00002A  @const710.call
+000030  @const711.call
+000038  @delay_ms1
+00004C  lcd_send_nibble
+00005B  lcd_read_nibble
+000061  lcd_send_byte
+000067  lcd_read_byte
+0000A3  lcd_init
+0000E1  kbd_init
+0000E4  lcd_gotoxy
+0000F6  lcd_putc
+000122  @PSTRINGC7_663
+000178  kbd_getc
+0001C8  @MUL88
+000200  MAIN
+000200  @cinit1
+00020E  @cinit2
+
+Project Directory:
+    C:\Users\joan\Documents\CCS C Projects\prueba trabajo\
+
+Project Files:
+    El Comparador.c                                         [04-Jul-21 13:35  CRC=38EBEA3C]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [15-Jan-18 15:53  CRC=63418C39]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c   [22-Feb-16 09:05  CRC=D1A6378A]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\kbd.c   [25-May-15 21:33  CRC=7C81F56B]
+
+Source signature=66D798D5
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=8814
+
+Units:
+    El Comparador (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   El Comparador.xsym
+    Errors:      El Comparador.err
+    Ext Symbols: El Comparador.esym
+    INHX8:       El Comparador.hex
+    Symbols:     El Comparador.sym
+    List:        El Comparador.lst
+    Debug/COFF:  El Comparador.cof
+    Project:     El Comparador.ccspjt
+    Call Tree:   El Comparador.tre
+    Statistics:  El Comparador.STA

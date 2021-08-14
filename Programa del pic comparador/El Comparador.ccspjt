@@ -1,0 +1,93 @@
+[PROJECT]
+Target=El Comparador.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.076
+Compiler=PCM
+[Target Data]
+FileList=El Comparador.c
+[El Comparador.c]
+Type=4
+[mru-list]
+1=El Comparador.c
+
+[defines]
+buildcount=39
+
+[ProjectLog]
+Days=3
+D1=02-07-2021
+D1_L=2
+D1_L1=[74427]Stopped Editing.
+TotalEdit=59
+TotalDebug=0
+D1_E=24
+D1_D=0
+D1_L2=[84346]Project Closed.
+D2=03-07-2021
+D2_L=35
+D2_L1=[33431]Project Opened.
+D2_L2=[33432]Project Closed.
+D2_L3=[33434]Project Opened.
+D2_L4=[34025]Started Editing.
+D2_L5=[34327]Stopped Editing.
+D2_L6=[36161]Started Editing.
+D2_L7=[36462]Stopped Editing.
+D2_L8=[41188]Started Editing.
+D2_L9=[41510]Stopped Editing.
+D2_L10=[41809]Started Editing.
+D2_L11=[42718]Stopped Editing.
+D2_L12=[44851]Started Editing.
+D2_L13=[45446]Stopped Editing.
+D2_L14=[48278]Started Editing.
+D2_L15=[48674]Stopped Editing.
+D2_L16=[50552]Started Editing.
+D2_L17=[50852]Stopped Editing.
+D2_L18=[51161]Started Editing.
+D2_L19=[52414]Stopped Editing.
+D2_E=33
+D2_D=0
+D2_L20=[53476]Project Closed.
+D2_L21=[71182]Project Opened.
+D2_L22=[71183]Project Closed.
+D2_L23=[71184]Project Opened.
+D2_L24=[71754]Started Editing.
+D2_L25=[74442]Stopped Editing.
+D2_L26=[80753]Started Editing.
+D2_L27=[81078]Stopped Editing.
+D2_L28=[81415]Started Editing.
+D2_L29=[81997]Stopped Editing.
+D2_L30=[82123]Started Editing.
+D2_L31=[83666]Stopped Editing.
+D2_L32=[84210]Started Editing.
+D2_L33=[84875]Stopped Editing.
+D2_L34=[84990]Started Editing.
+D2_L35=[85517]Project Closed.
+D3=04-07-2021
+D3_L=6
+D3_L1=[47284]Project Opened.
+D3_L2=[47311]Started Editing.
+D3_L3=[47389]Stopped Editing.
+D3_E=2
+D3_D=0
+D3_L4=[47389]Project Closed.
+D3_L5=[48905]Project Opened.
+D3_L6=[49141]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=..\Prueba 1\Prueba 1.c
+t1=1
+2=..\Prueba 1 LCD\Prueba 1 LCD.c
+t2=1
+3=..\Prueba 2 LCD\Prueba 2 LCD.c
+t3=7
+4=..\Prueba Naya\Naya El Comparador.c
+t4=79
+Count=5
+5=El Comparador.c
+t5=79
+[Units]
+Count=1
+1=El Comparador (main)

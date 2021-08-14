@@ -1,0 +1,70 @@
+#include <16f877a.h>
+#fuses hs,nowdt
+#use delay(clock=20M)
+
+#define lcd_data_port getenv("sfr:portd")
+#define lcd_enable_pin pin_d0
+#define lcd_rs_pin pin_d1
+#define lcd_rw_pin pin_d2
+#define use_portb_kbd TRUE
+#include <lcd.c>
+#include <kbd.c>
+void main()
+{
+   
+   char a;
+   char b;
+   
+
+   int i=0;
+   int y;
+   int x;
+   port_b_pullups (true);
+   lcd_init ();
+   kbd_init ();
+   
+
+   
+   
+
+   while(i<2)
+   {
+      a=0;
+      b=0;
+      
+      LCD_PUTC("Agregar A");
+      
+      if (a==0)
+      {
+         lcd_gotoxy(1,1);
+         a=kbd_getc();
+         printf(lcd_putc, "a: %c", a);
+         lcd_gotoxy(1,2);
+         delay_ms(200);
+         i++;
+         
+         printf(LCD_PUTC, "\f");
+      
+      }
+      
+      LCD_PUTC("Agregar B");
+      if (b==0)
+      {
+         lcd_gotoxy(1,1);
+         b=kbd_getc();
+         printf(lcd_putc, "b: %c", b);
+         lcd_gotoxy(1,2);
+         delay_ms(200);
+         
+         
+         printf(LCD_PUTC, "\f");
+      
+      }
+      
+      
+   }
+   
+   printf(LCD_PUTC, "Fin del proceso");
+   
+}
+

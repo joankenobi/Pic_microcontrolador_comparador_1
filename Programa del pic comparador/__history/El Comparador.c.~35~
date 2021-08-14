@@ -1,0 +1,132 @@
+//!#include <16f877a.h>
+//!#fuses hs,nowdt
+//!#use delay(clock=20M)
+//!
+//!#define lcd_data_port getenv("sfr:portd")
+//!#define lcd_enable_pin pin_d0
+//!#define lcd_rs_pin pin_d1
+//!#define lcd_rw_pin pin_d2
+//!#define use_portb_kbd TRUE
+//!#include <lcd.c>
+//!#include <kbd.c>
+//!void main()
+//!{
+//!   int k=0;
+//!   char p;
+//!   int data[];
+//!
+//!   int i=0;
+//!   int y;
+//!   int x;
+//!   port_b_pullups (true);
+//!   lcd_init ();
+//!   kbd_init ();
+//!   
+//!
+//!   
+//!   
+//!
+//!   while(TRUE)
+//!   {
+//!   
+//!      k=kbd_getc();
+//!      if (k!=0)
+//!      {
+//!         data[i]=k;
+//!         printf(lcd_putc, "Tecla pulsada: %c", k);
+//!         lcd_gotoxy(1,2);
+//!         printf(lcd_putc, "%u", data[1]);
+//!         delay_ms(200);
+//!         i++;
+//!         
+//!         printf(LCD_PUTC, "\f");
+//!      
+//!      }
+//!      
+//!      
+//!      
+//!   }
+//!   
+//!}
+
+
+//!----- Ramses Code -------
+
+#include <16f877a.h> 
+#fuses XT,NOLVP,NOWDT,NOPROTECT 
+#use delay(clock=4000000)
+#include <lcd.c>                                                            //Esta libreria se encuentra dentro de la carpeta de la actividad
+#include <kbd.c> 
+
+#byte trisC = 0x86                                                               //trisB en 86h.
+#byte portC = 0x06                                                               //portB en 06h.
+#byte option_reg = 0x81                                                          //option_reg en 81h.
+
+void main() 
+{ 
+   char a=0; 
+   char b=0;                                                                     //Defino los caracteres A y B
+   delay_ms(1); 
+    
+   lcd_init();                                                                   // Inicializa el LCD
+   kbd_init();                                                                   // Inicializa el teclado
+   
+   bit_clear(trisC,1);                                                           // C1 como salida.
+   bit_clear(portC,1);                                                           // Apaga el LED 1.
+   
+   bit_clear(trisC,2);                                                           // C2 como salida.
+   bit_clear(portC,2);                                                           // Apaga el LED 2.
+   
+   bit_clear(trisC,3);                                                           // C3 como salida.
+   bit_clear(portC,3);                                                           // Apaga el LED 3.
+   
+
+   while(1) // infinite loop 
+   { 
+   
+      a=0;                                                                       // Reinicia los valores al inicio de cada ciclo
+      b=0;
+      
+      lcd_gotoxy(1,1);                                                           // Establece el cursor en la primera linea 
+      lcd_putc("Valor A");                                                       // Se muestra en el cursor
+      lcd_gotoxy(1,2);                                                           // Establece el cursor en la segunda linea
+      
+      while(a==0)                   
+      {
+         a = kbd_getc();                                                         // Lee la entrada del teclado
+         lcd_putc(a);                                                            // Imprime el valor en el cursor
+      }
+      
+      delay_ms(250);          
+      
+      lcd_gotoxy(1,1);              
+      lcd_putc("Valor B");  
+      lcd_gotoxy(1,2);              
+      
+      while(b==0)                   
+      {
+         b = kbd_getc();                                                         // Lee la entrada del teclado
+         lcd_putc(b);                                                            // Imprime el valor en el cursor
+      }           
+
+      delay_ms(250);         
+      
+      if (a==b) {
+         bit_set(portC,1); 
+         bit_clear(portC,2);
+         bit_clear(portC,3);
+      }
+      if (a<b) {
+         bit_clear(portC,1); 
+         bit_set(portC,2);
+         bit_clear(portC,3);
+      }
+      if (a>b) {
+         bit_clear(portC,1); 
+         bit_clear(portC,2);
+         bit_set(portC,3);
+      }
+      
+      delay_ms(1);               
+   } 
+}
